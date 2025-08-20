@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contoh Program</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="app.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <div id="banner" class="sticky top-0 z-50 bg-yellow-300 text-black shadow-md mb-6">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-2">
+      
+      <!-- Left: Text & Progress -->
+      <div class="flex-1">
+        <div id="top-banner" class="md:text-base mb-1 text-center md:text-left">
+          🚀 Loading data...
+        </div>
+        <div id= "countdown-container" class="flex justify-center items-center hidden">
+          <span id="countdown" 
+                class="px-6 py-4shadow-lg rounded-2xl text-l font-mono text-red-600 tracking-widest">
+            --
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+      Nak buat program macam di bawah ni?
+    </h1>
+    <p class="max-w-2xl text-lg md:text-xl text-gray-600 mb-8">
+      Percaya tak!? Belajar tak sampai seminggu dah boleh buat program macam ni!
+    </p>
+
+    <!-- VSL Vertical Video -->
+    <div class="w-full max-w-sm aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg mb-8">
+      <video class="w-full h-full object-cover" controls playsinline preload="metadata">
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- CTA -->
+    <a id="a-daftar" 
+       href="https://syafihakim.github.io/cpp-level-1-site/" 
+       class="px-8 py-4 bg-orange-500 text-white rounded-2xl shadow-lg hover:bg-orange-600 transition font-semibold text-lg btn-daftar">
+      Ya! Saya nak belajar
+    </a>
+  </section>
+
+  <!-- Offer Section -->
+  <section id="offer" class="py-20 bg-white px-8">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ini yang anda akan dapat!</h2>
+      <p class="text-lg text-gray-600 mb-10">
+        Join hari ni, anda akan dapat semua di bawah
+      </p>
+      <div class="bg-blue-100 p-4 rounded-2xl mb-6">
+        <p class="text-sm mb-4 text-gray-600">
+          <!-- Harga : RM20 sahaja</br></br> -->
+          💎 Lifetime access</br>
+          
+          ✅ Belajar anytime, tiada jadual</br>
+          ✅ Panduan Lengkap A-Z, tinggal ikut je</br>
+          ✅ Latihan + Jawapan disediakan</br>
+          ✅ Video + Nota disediakan</br>
+          </br>
+
+          🔥 Belajar asas Java dan Python sekaligus!</br>
+          💰 Dijamin puas hati - atau saya bagi full refund</br></br>
+
+          <span class="text-gray-500 italic text-xs">... dan banyak lagi sebenarnya. Tekan button di bawah untuk tengok full details</span>
+
+          <!-- <b>Harga tak masuk akal RM20!</b></br> -->
+
+        </p>
+      </div>
+
+      <a id="a-daftar" href="https://syafihakim.github.io/cpp-level-1-site/" 
+         class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg shadow transition duration-300 hover:shadow-lg hover:-translate-y-0.5 flex justify-center items-center btn-daftar">
+          Tekan untuk tengok full details
+      </a>
+          
+        </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-300 py-8 px-6 mt-12">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <!-- Links -->
+      <nav class="flex space-x-6 text-sm">
+        <a href="tnc.html" class="hover:text-yellow-400 transition">Terms & Conditions</a>
+        <a href="refund_policy.html" class="hover:text-yellow-400 transition">Refund Policy</a>
+      </nav>
+
+      <!-- Contact Info -->
+      <div class="text-center md:text-right text-sm space-y-1">
+        <div>Email: <a href="mailto:msyafihakim@gmail.com" class="hover:text-yellow-400 transition">msyafihakim@gmail.com</a></div>
+        <div>Phone: <a href="tel:+60105820083" class="hover:text-yellow-400 transition">010-5820083</a></div>
+        <div>Location: Operating Remotely</div>
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-500 mt-6">
+      &copy; Syafi Hakim Resources (003435578-M)
+    </div>
+  </footer>
+
+  <!-- Optional: Simple JS for smooth scroll -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

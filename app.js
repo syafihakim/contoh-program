@@ -1,35 +1,61 @@
-function updateCountdown(targetDate) {
+// const banner = document.getElementById("banner");
+// const bannerContent = document.getElementById("top-banner");
+// const topBanner = document.getElementById("top-banner");
+// const videoSection = document.getElementById("video-section");
+// let bannerHeight = 0;
 
-  const now = new Date();
-  const diff = targetDate - now;
+// window.addEventListener("scroll", () => {
+//   console.log(bannerHeight);
+//   const videoTop = videoSection.getBoundingClientRect().top + window.scrollY;
+//   const scrollY = window.scrollY;
 
-  if (diff <= 0) {
-    document.getElementById("countdown").textContent = "00:00:00";
-    resetPrice();
-    clearInterval(timer);
-    return;
-  }
+//   if (scrollY + bannerHeight >= videoTop - bannerHeight) {
+//     // Minimize banner
+//     banner.classList.add("py-1");
+//     banner.classList.remove("py-3");
+//     document.getElementById("top-banner").style.display = "none";
+//   } else {
+//     // Restore
+//     banner.classList.add("py-3");
+//     banner.classList.remove("py-1");
+//     document.getElementById("top-banner").style.display = "";
+//   }
+// });
 
-  const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, "0");
-  const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, "0");
-  const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, "0");
 
-  document.getElementById("countdown").textContent = `Tamat dalam ${hours}:${minutes}:${seconds}`;
-}
+// function updateCountdown(targetDate) {
 
-function updateBannerHeight() {
-  const banner = document.getElementById("banner");
-  if (banner) {
-    document.documentElement.style.setProperty(
-      "--banner-height",
-      banner.offsetHeight + "px"
-    );
-  }
-}
+//   const now = new Date();
+//   const diff = targetDate - now;
 
-// Run on load and when window resizes
-window.addEventListener("load", updateBannerHeight);
-window.addEventListener("resize", updateBannerHeight);
+//   if (diff <= 0) {
+//     document.getElementById("countdown").textContent = "00:00:00";
+//     resetPrice();
+//     clearInterval(timer);
+//     return;
+//   }
+
+//   const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, "0");
+//   const minutes = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, "0");
+//   const seconds = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, "0");
+
+//   document.getElementById("countdown").textContent = `Tamat dalam ${hours}:${minutes}:${seconds}`;
+// }
+
+// function updateBannerHeight() {
+//   const banner = document.getElementById("banner");
+//   if (banner) {
+//     document.documentElement.style.setProperty(
+//       "--banner-height",
+//       banner.offsetHeight + "px"
+//     );
+//     bannerHeight = banner.clientHeight;
+//   }
+// }
+
+// // Run on load and when window resizes
+// window.addEventListener("load", updateBannerHeight);
+// window.addEventListener("resize", updateBannerHeight);
 
 // 
 const sheetId = "1o_PVByfyy3NNcHfUMK2obi1jquivOHr6PZjvouksqRk";
@@ -66,14 +92,14 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?
     const registerUrl = "https://syafihakim.github.io/cpp-level-1-site/";
 
     if (promoIdx != -1) {
-      document.getElementById("top-banner").innerHTML = `
-        <span class="text-md font-semilight">
-        ${promoName}</br>
-        <span class="text-4xl font-bold">RM${promoPrice}</span>
-        <span class="line-through text-gray-600 text-md">RM40</span>
-        </span>`;
+      // document.getElementById("top-banner").innerHTML = `
+      //   <span class="text-md font-semilight">
+      //   ${promoName}</br>
+      //   <span class="text-4xl font-bold">RM${promoPrice}</span>
+      //   <span class="line-through text-gray-600 text-md">RM40</span>
+      //   </span>`;
 
-      document.getElementById("countdown-container").classList.remove("hidden");
+      // document.getElementById("countdown-container").classList.remove("hidden");
       document.querySelectorAll(".btn-daftar").forEach(el => {
         el.href = `${registerUrl}?promo=${promoCodeFromUrl}`;
       });
@@ -83,12 +109,12 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?
       timer = setInterval(() => updateCountdown(validUntilFromDB), 1000);
 
     } else {
-      document.getElementById("countdown-container").classList.add("hidden");
+      //document.getElementById("countdown-container").classList.add("hidden");
     }
 
   })
   .catch(error => {
     console.error("Error:", error);
-    document.getElementById("top-banner").textContent =
-      "⚠️ Uh oh. Tak boleh load data";
+    // document.getElementById("top-banner").textContent =
+    //   "⚠️ Uh oh. Tak boleh load data";
   });
